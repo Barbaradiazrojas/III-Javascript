@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Colores</title>
+</head>
+<body>
+    <div id="azul" style="width: 200px; height: 200px; background-color: blue;"></div>
+    <div id="rojo" style="width: 200px; height: 200px; background-color: red;"></div>
+    <div id="verde" style="width: 200px; height: 200px; background-color: green;"></div>
+    <div id="amarillo" style="width: 200px; height: 200px; background-color: yellow;"></div>
+    <div id="key" style="width: 200px; height: 200px; background-color: white; border: 1px solid black;"></div>
+
+    <script>
+        // Cambiar color a negro al hacer click
+        const divs = document.querySelectorAll('div[id="azul"], div[id="rojo"], div[id="verde"], div[id="amarillo"]');
+        divs.forEach(div => {
+            div.addEventListener('click', () => {
+                div.style.backgroundColor = 'black';
+            });
+        });
+
+        // Manejar eventos de teclado para colores
+        document.addEventListener('keydown', function(event) {
+            const keyDiv = document.getElementById('key');
+            switch(event.key) {
+                case 'a':
+                    keyDiv.style.backgroundColor = 'pink';
+                    break;
+                case 's':
+                    keyDiv.style.backgroundColor = 'orange';
+                    break;
+                case 'd':
+                    keyDiv.style.backgroundColor = 'lightblue';
+                    break;
+                case 'q':
+                    const purpleDiv = document.createElement('div');
+                    purpleDiv.style.width = '200px';
+                    purpleDiv.style.height = '200px';
+                    purpleDiv.style.backgroundColor = 'purple';
+                    document.body.appendChild(purpleDiv);
+                    break;
+                case 'w':
+                    const grayDiv = document.createElement('div');
+                    grayDiv.style.width = '200px';
+                    grayDiv.style.height = '200px';
+                    grayDiv.style.backgroundColor = 'gray';
+                    document.body.appendChild(grayDiv);
+                    break;
+                case 'e':
+                    const brownDiv = document.createElement('div');
+                    brownDiv.style.width = '200px';
+                    brownDiv.style.height = '200px';
+                    brownDiv.style.backgroundColor = 'brown';
+                    document.body.appendChild(brownDiv);
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
