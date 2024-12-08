@@ -1,18 +1,12 @@
 const ele = document.getElementById("ele1");
 
-// Función para alternar colores entre verde y amarillo
-function pintar(elemento) {
-    const currentColor = elemento.style.backgroundColor;
-    
-    if (currentColor === 'yellow') {
-        elemento.style.backgroundColor = 'green';
-    } else {
-        elemento.style.backgroundColor = 'yellow';
-    }
+// Función que recibe elemento y color como parámetros
+function pintar(elemento, color = 'green') {
+    elemento.style.backgroundColor = color;
 }
 
 // Establecer color inicial a verde
-ele.style.backgroundColor = 'green';
+pintar(ele);
 
-// Agregar evento de click para cambiar colores
-ele.addEventListener("click", () => pintar(ele));
+// Agregar evento de click para cambiar a amarillo
+ele.addEventListener("click", () => pintar(ele, 'yellow'));

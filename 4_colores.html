@@ -10,8 +10,17 @@
     <div id="verde" style="width: 200px; height: 200px; background-color: green;"></div>
     <div id="amarillo" style="width: 200px; height: 200px; background-color: yellow;"></div>
     <div id="key" style="width: 200px; height: 200px; background-color: white; border: 1px solid black;"></div>
-
+    
     <script>
+        // Función para crear un nuevo div con un color específico
+        function crearDiv(color) {
+            const nuevoDiv = document.createElement('div');
+            nuevoDiv.style.width = '200px';
+            nuevoDiv.style.height = '200px';
+            nuevoDiv.style.backgroundColor = color;
+            document.body.appendChild(nuevoDiv);
+        }
+
         // Cambiar color a negro al hacer click
         const divs = document.querySelectorAll('div[id="azul"], div[id="rojo"], div[id="verde"], div[id="amarillo"]');
         divs.forEach(div => {
@@ -23,6 +32,7 @@
         // Manejar eventos de teclado para colores
         document.addEventListener('keydown', function(event) {
             const keyDiv = document.getElementById('key');
+            
             switch(event.key) {
                 case 'a':
                     keyDiv.style.backgroundColor = 'pink';
@@ -34,25 +44,13 @@
                     keyDiv.style.backgroundColor = 'lightblue';
                     break;
                 case 'q':
-                    const purpleDiv = document.createElement('div');
-                    purpleDiv.style.width = '200px';
-                    purpleDiv.style.height = '200px';
-                    purpleDiv.style.backgroundColor = 'purple';
-                    document.body.appendChild(purpleDiv);
+                    crearDiv('purple');
                     break;
                 case 'w':
-                    const grayDiv = document.createElement('div');
-                    grayDiv.style.width = '200px';
-                    grayDiv.style.height = '200px';
-                    grayDiv.style.backgroundColor = 'gray';
-                    document.body.appendChild(grayDiv);
+                    crearDiv('gray');
                     break;
                 case 'e':
-                    const brownDiv = document.createElement('div');
-                    brownDiv.style.width = '200px';
-                    brownDiv.style.height = '200px';
-                    brownDiv.style.backgroundColor = 'brown';
-                    document.body.appendChild(brownDiv);
+                    crearDiv('brown');
                     break;
             }
         });
